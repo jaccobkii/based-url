@@ -5,7 +5,7 @@
 base_url_pattern="^http://music.163.com/song/(?song_id:\\d+)/?$"
 essential_query=[]
 target_url="http://music.163.com/song/{song_id}/"
-test_cases = [
+test_cases = [ # Optional
     ["http://music.163.com/song/23333", "http://music.163.com/song/23333/"],
     ["http://music.163.com/song/23333/", "http://music.163.com/song/23333/"],
     ["http://music.163.com/song/23333/?user_id=666", "http://music.163.com/song/23333/"],
