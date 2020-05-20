@@ -11,3 +11,8 @@ test_cases = [ # Optional
     ["http://music.163.com/song/23333/?user_id=666", "http://music.163.com/song/23333/"],
     ["http://music.163.com/song/23333?user_id=666", "http://music.163.com/song/23333/"]
 ]
+
+[acfun_mobile]
+base_url_pattern="^https://m.acfun.cn/v/$"
+essential_query=["ac"]
+target_url="https://m.acfun.cn/v/"
