@@ -19,3 +19,19 @@ target_url="https://m.acfun.cn/v/"
 test_cases = [
     ["https://m.acfun.cn/v/?ac=233333&sid=996abcd", "https://m.acfun.cn/v/?ac=233333"]
 ]
+
+[bilibili_mobile]
+base_url_pattern="^https?://b23.tv/(?bv:\w+)$"
+essential_query=[]
+target_url="https://b23.tv/{bv}"
+test_cases = [
+    ["https://b23.tv/BV1wK4y1t7ft?p=1&share_medium=iphone&share_plat=ios&share_source=GENERIC&share_tag=s_i&timestamp=233333333&unique_k=SdF", "https://b23.tv/BV1wK4y1t7ft"]
+]
+
+[bilibili]
+base_url_pattern="^https?://www.bilibili.com/video/(?bv:\w+)$"
+essential_query=[]
+target_url="https://www.bilibili.com/video/{bv}"
+test_cases=[
+    ["https://www.bilibili.com/video/BV1wK4y1t7ft?p=1&share_medium=iphone&share_plat=ios&share_source=GENERIC&share_tag=s_i&timestamp=233333333&unique_k=SdF", "https://www.bilibili.com/video/BV1wK4y1t7ft"]
+]
