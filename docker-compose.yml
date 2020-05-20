@@ -1,0 +1,10 @@
+version: '3'
+services:
+  server:
+    image: 'python:3.8-slim'
+      ports:
+        - '14208:14208'
+      volumes:
+        - '.:/app'
+      working_dir: '/app'
+      command: ['./run.sh']
