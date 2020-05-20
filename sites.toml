@@ -2,7 +2,7 @@
 # http://music.163.com/song/<song_id>/?userid=<tracer_id>
 # here <tracer_id> should be removed
 # result: http://music.163.com/song/<song_id>/
-base_url_pattern="^http://music.163.com/song/(?song_id:\\d+)/?$" # match base url
+base_url_pattern="^https?://music.163.com/song/(?song_id:\\d+)/?$" # match base url
 essential_query=[] # Only keep necessary queries
 target_url="http://music.163.com/song/{song_id}/"
 test_cases = [ # Optional
@@ -13,6 +13,9 @@ test_cases = [ # Optional
 ]
 
 [acfun_mobile]
-base_url_pattern="^https://m.acfun.cn/v/$"
+base_url_pattern="^https?://m.acfun.cn/v/$"
 essential_query=["ac"]
 target_url="https://m.acfun.cn/v/"
+test_cases = [
+    ["https://m.acfun.cn/v/?ac=233333&sid=996abcd", "https://m.acfun.cn/v/?ac=233333"]
+]
