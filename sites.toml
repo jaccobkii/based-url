@@ -2,8 +2,8 @@
 # http://music.163.com/song/<song_id>/?userid=<tracer_id>
 # here <tracer_id> should be removed
 # result: http://music.163.com/song/<song_id>/
-base_url_pattern="^http://music.163.com/song/(?song_id:\\d+)/?$"
-essential_query=[]
+base_url_pattern="^http://music.163.com/song/(?song_id:\\d+)/?$" # match base url
+essential_query=[] # Only keep necessary queries
 target_url="http://music.163.com/song/{song_id}/"
 test_cases = [ # Optional
     ["http://music.163.com/song/23333", "http://music.163.com/song/23333/"],
