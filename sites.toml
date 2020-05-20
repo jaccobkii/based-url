@@ -21,7 +21,7 @@ test_cases = [
 ]
 
 [bilibili_mobile]
-base_url_pattern="^https?://b23.tv/(?bv:\w+)$"
+base_url_pattern="^https?://b23.tv/(?bv:\\w+)$"
 essential_query=[]
 target_url="https://b23.tv/{bv}"
 test_cases = [
@@ -29,7 +29,7 @@ test_cases = [
 ]
 
 [bilibili]
-base_url_pattern="^https?://www.bilibili.com/video/(?bv:\w+)$"
+base_url_pattern="^https?://www.bilibili.com/video/(?bv:\\w+)$"
 essential_query=[]
 target_url="https://www.bilibili.com/video/{bv}"
 test_cases=[
