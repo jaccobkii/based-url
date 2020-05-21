@@ -36,6 +36,14 @@ test_cases = [
     ["http://tieba.baidu.com/p/6694275034?share=9105&fr=share&unique=SFDMLSNLFSFONOOIAD&st=25709238040&client_type=1&client_version=11.4.1&sfc=copy", "https://tieba.baidu.com/p/6694275034"]
 ]
 
+[baidu_tieba_forum]
+base_url_pattern="^https?://tieba.baidu.com/f$"
+essential_query=["kw"]
+target_url="https://tieba.baidu.com/f"
+test_cases = [
+    ["https://tieba.baidu.com/f?kw=bilibili&fr=index", "https://tieba.baidu.com/f?kw=bilibili"]
+]
+
 [bilibili]
 base_url_pattern="^https?://www.bilibili.com/video/(?bv:\\w+)$"
 essential_query=[]
