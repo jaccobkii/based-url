@@ -28,6 +28,14 @@ test_cases = [
     ["https://b23.tv/BV1wK4y1t7ft?p=1&share_medium=iphone&share_plat=ios&share_source=GENERIC&share_tag=s_i&timestamp=233333333&unique_k=SdF", "https://b23.tv/BV1wK4y1t7ft"]
 ]
 
+[baidu_tieba_post]
+base_url_pattern="^https?://tieba.baidu.com/p/(?pid:\\d+)$"
+essential_query=[]
+target_url="https://tieba.baidu.com/p/{pid}"
+test_cases = [
+    ["http://tieba.baidu.com/p/6694275034?share=9105&fr=share&unique=SFDMLSNLFSFONOOIAD&st=25709238040&client_type=1&client_version=11.4.1&sfc=copy", "https://tieba.baidu.com/p/6694275034"]
+]
+
 [bilibili]
 base_url_pattern="^https?://www.bilibili.com/video/(?bv:\\w+)$"
 essential_query=[]
