@@ -16,7 +16,7 @@ def transform_url(site: SiteConfig, url: str) -> Optional[str]:
     })
     data = site.base_url_pattern.match(base_url)
     if data is None:
-        return
+        return None
     new_base_url = site.target_url.format(**data)
     if new_query:
         new_url = f"{new_base_url}?{new_query}"
@@ -30,3 +30,4 @@ def transform_sites(sites: List[SiteConfig], url: str) -> Optional[str]:
         res = transform_url(s, url)
         if res is not None:
             return res
+    return None

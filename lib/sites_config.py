@@ -25,7 +25,7 @@ class SiteConfig(NamedTuple):
 @typechecked
 def _get_test_cases(test_cases: Optional[List[List[str]]]) -> Optional[List[ConfigTestCase]]:
     if test_cases is None:
-        return
+        return None
     return [
         ConfigTestCase(i, e)
         for i, e in test_cases
