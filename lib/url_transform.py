@@ -14,7 +14,7 @@ def transform_url(site: SiteConfig, url: str) -> Optional[str]:
         for k, v in query.items()
         if k in site.essential_query
     })
-    data = site.base_url_pattern.match(base_url)
+    data = site.base_url_pattern.get_dict_or_none(base_url)
     if data is None:
         return None
     new_base_url = site.target_url.format(**data)

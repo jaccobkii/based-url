@@ -34,7 +34,10 @@ class UrlFriendlySearch:
     def __init__(self, pattern: str):
         self.pattern = re.compile(convert_pattern(pattern))
 
-    def match(self, s: str) -> Optional[Dict[str, str]]:
+    def matches(self, s: str) -> bool:
+        return self.pattern.search(s) is not None
+
+    def get_dict_or_none(self, s: str) -> Optional[Dict[str, str]]:
         r = self.pattern.search(s)
         if r is not None:
             return r.groupdict()

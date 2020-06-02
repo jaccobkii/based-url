@@ -23,6 +23,13 @@ class SiteConfig(NamedTuple):
 
 
 @typechecked
+class RedirectConfig(NamedTuple):
+    name: str
+    source: UrlFriendlySearch
+    destination: UrlFriendlySearch
+
+
+@typechecked
 def _get_test_cases(test_cases: Optional[List[List[str]]]) -> Optional[List[ConfigTestCase]]:
     if test_cases is None:
         return None
@@ -41,6 +48,18 @@ def parse_sites(f: IO) -> List[SiteConfig]:
             essential_query=set(v['essential_query']),
             target_url=v['target_url'],
             test_cases=_get_test_cases(v.get('test_cases'))
+        )
+        for k, v in d.items()
+    ]
+
+
+def parse_redirects(f: IO) -> List[RedirectConfig]:
+    d = toml.load(f, _dict=OrderedDict)
+    return [
+        RedirectConfig(
+            name=k,
+            source=UrlFriendlySearch(v['source']),
+            destination=UrlFriendlySearch(v['destination'])
         )
         for k, v in d.items()
     ]
