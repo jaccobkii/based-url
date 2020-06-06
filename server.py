@@ -24,7 +24,7 @@ def get_full_url(url):
 
 def parse_form():
     url = flask.request.form['url']
-    strict = flask.request.form.get('strict') == 'true'
+    strict = flask.request.form.get('strict') == 'on'
     return url, strict
 
 def handle_url(url_src):
@@ -60,8 +60,11 @@ def _post_api():
     url, strict = parse_form()
     url = get_full_url(url)
     res = handle_url(url)
-    if res is None and strict:
-        return Response(f"No site matches url: {url}", status=400)
+    if res is None:
+        if strict:
+            return Response(f"No site matches url: {url}", status=400)
+        else:
+            return url
     else:
         return res
 
