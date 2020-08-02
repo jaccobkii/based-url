@@ -51,3 +51,28 @@ target_url="https://www.bilibili.com/video/{bv}"
 test_cases=[
     ["https://www.bilibili.com/video/BV1wK4y1t7ft?p=1&share_medium=iphone&share_plat=ios&share_source=GENERIC&share_tag=s_i&timestamp=233333333&unique_k=SdF", "https://www.bilibili.com/video/BV1wK4y1t7ft"]
 ]
+
+[zhihu_zhuanlan]
+base_url_pattern="^https?://zhuanlan.zhihu.com/p/(?pid:\\d+)$"
+essential_query=[]
+target_url="https://zhuanlan.zhihu.com/p/{pid}"
+test_cases=[
+    ["http://zhuanlan.zhihu.com/p/2333?a=b", "https://zhuanlan.zhihu.com/p/2333"]
+]
+
+[zhihu_question]
+base_url_pattern="^https?://www.zhihu.com/question/(?qid:\\d+)$"
+essential_query=[]
+target_url="https://www.zhihu.com/question/{qid}"
+test_cases=[
+    ["http://www.zhihu.com/question/2333?a=b", "https://www.zhihu.com/question/2333"]
+]
+
+
+[zhihu_answer]
+base_url_pattern="^https?://www.zhihu.com/question/(?qid:\\d+)/answer/(?aid:\\d+)$"
+essential_query=[]
+target_url="https://www.zhihu.com/question/{qid}/answer/{aid}"
+test_cases=[
+    ["http://www.zhihu.com/question/2333/answer/456?a=b", "https://www.zhihu.com/question/2333/answer/456"]
+]
