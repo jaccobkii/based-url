@@ -11,7 +11,7 @@ class UConf(NamedTuple):
 def download(url: str, fp: str):
     res = requests.get(url)
     with open(fp, 'w') as f:
-        f.write(res.content)
+        f.write(res.text)
 
 
 def load_config() -> UConf:
