@@ -3,13 +3,7 @@
 
 name: Quick Check
 
-on:
-  commit_comment:
-    branches: [config]
-  push:
-    branches: [ master, config ]
-  pull_request:
-    branches: [ master, config ]
+on: push
 
 jobs:
   build:
