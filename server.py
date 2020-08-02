@@ -89,7 +89,7 @@ def _strict_transform_route(url):
 
 
 if __name__ == '__main__':
-    with open('sites.toml') as sf, open('redirects.toml') as rf:
+    with open('sites.example.toml') as sf, open('redirects.example.toml') as rf:
         sites = parse_sites(sf)
         redirects = parse_redirects(rf)
     app.run('0.0.0.0', 14208)

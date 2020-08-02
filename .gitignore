@@ -3,3 +3,6 @@ venv/
 .vscode/
 *.pyc
 .*_cache/
+tmp/
+redirects.toml
+sites.toml

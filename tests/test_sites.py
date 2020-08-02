@@ -21,7 +21,7 @@ class SitesTestCase(unittest.TestCase):
                 self.assertEqual(expected, res, f"Failed at site '{site.name}' case {idx+1}, expected: {expected}, got: {res}")
 
     def test(self):
-        self.run_test(Path(__file__).parent.parent / 'sites.toml')
+        self.run_test(Path(__file__).parent.parent / 'sites.example.toml')
 
 
 if __name__ == '__main__':
