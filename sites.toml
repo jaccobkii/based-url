@@ -1,0 +1,53 @@
+[163_music]
+# http://music.163.com/song/<song_id>/?userid=<tracer_id>
+# here <tracer_id> should be removed
+# result: http://music.163.com/song/<song_id>/
+base_url_pattern="^https?://music.163.com/song/(?song_id:\\d+)/?$" # match base url
+essential_query=[] # Only keep necessary queries
+target_url="http://music.163.com/song/{song_id}/"
+test_cases = [ # Optional
+    ["http://music.163.com/song/23333", "http://music.163.com/song/23333/"],
+    ["http://music.163.com/song/23333/", "http://music.163.com/song/23333/"],
+    ["http://music.163.com/song/23333/?user_id=666", "http://music.163.com/song/23333/"],
+    ["http://music.163.com/song/23333?user_id=666", "http://music.163.com/song/23333/"]
+]
+
+[acfun_mobile]
+base_url_pattern="^https?://m.acfun.cn/v/$"
+essential_query=["ac"]
+target_url="https://m.acfun.cn/v/"
+test_cases = [
+    ["https://m.acfun.cn/v/?ac=233333&sid=996abcd", "https://m.acfun.cn/v/?ac=233333"]
+]
+
+[bilibili_mobile]
+base_url_pattern="^https?://b23.tv/(?bv:\\w+)$"
+essential_query=[]
+target_url="https://b23.tv/{bv}"
+test_cases = [
+    ["https://b23.tv/BV1wK4y1t7ft?p=1&share_medium=iphone&share_plat=ios&share_source=GENERIC&share_tag=s_i&timestamp=233333333&unique_k=SdF", "https://b23.tv/BV1wK4y1t7ft"]
+]
+
+[baidu_tieba_post]
+base_url_pattern="^https?://tieba.baidu.com/p/(?pid:\\d+)$"
+essential_query=[]
+target_url="https://tieba.baidu.com/p/{pid}"
+test_cases = [
+    ["http://tieba.baidu.com/p/6694275034?share=9105&fr=share&unique=SFDMLSNLFSFONOOIAD&st=25709238040&client_type=1&client_version=11.4.1&sfc=copy", "https://tieba.baidu.com/p/6694275034"]
+]
+
+[baidu_tieba_forum]
+base_url_pattern="^https?://tieba.baidu.com/f$"
+essential_query=["kw"]
+target_url="https://tieba.baidu.com/f"
+test_cases = [
+    ["https://tieba.baidu.com/f?kw=bilibili&fr=index", "https://tieba.baidu.com/f?kw=bilibili"]
+]
+
+[bilibili]
+base_url_pattern="^https?://www.bilibili.com/video/(?bv:\\w+)$"
+essential_query=[]
+target_url="https://www.bilibili.com/video/{bv}"
+test_cases=[
+    ["https://www.bilibili.com/video/BV1wK4y1t7ft?p=1&share_medium=iphone&share_plat=ios&share_source=GENERIC&share_tag=s_i&timestamp=233333333&unique_k=SdF", "https://www.bilibili.com/video/BV1wK4y1t7ft"]
+]
